@@ -5,6 +5,9 @@ const indexRouter = require("./routes/indexRouter");
 const authorRouter = require("./routes/authorRouter");
 const bookRouter = require("./routes/bookRouter");
 
+const assetsPath = path.join(__dirname, "public");
+app.use(express.static(assetsPath));
+
 app.use("/authors", authorRouter);
 app.use("/books", bookRouter);
 app.use("/", indexRouter);
@@ -27,4 +30,4 @@ app.listen(PORT, (error) => {
 });
 
 app.set("views", path.join(__dirname, "views"));
-app.set("view engin", "ejs");
+app.set("view engine", "ejs");
