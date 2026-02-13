@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("node:path");
 const app = express();
 const indexRouter = require("./routes/indexRouter");
 const authorRouter = require("./routes/authorRouter");
@@ -24,3 +25,6 @@ app.listen(PORT, (error) => {
   }
   console.log(`My first Express app - listening on port ${PORT}!`);
 });
+
+app.set("views", path.join(__dirname, "views"));
+app.set("view engin", "ejs");
